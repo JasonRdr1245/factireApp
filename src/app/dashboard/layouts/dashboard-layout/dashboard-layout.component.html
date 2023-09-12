@@ -1,0 +1,36 @@
+<div class="layout-wrapper layout-content-navbar">
+  <div class="layout-container">
+    <aside
+      id="layout-menu"
+      class="layout-menu menu-vertical menu bg-menu-theme"
+    >
+      <div class="app-brand demo">
+        <a class="app-brand-link">
+          <span class="app-brand-logo demo"> </span>
+          <span class="app-brand-text demo menu-text fw-bolder ms-2"
+            >Facture</span
+          >
+        </a>
+      </div>
+      <div class="menu-inner-shadow"></div>
+      <ul class="menu-inner py-1">
+        <li class="menu-item">
+          <a class="menu-link" routerLink="/dashboard/products" routerLinkActive="active">
+            <i class="menu-icon tf-icons bx bx-home-circle"></i>
+            <div data-i18n="Analytics">products</div>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a class="menu-link" routerLink="/dashboard/facture" routerLinkActive="active">
+            <i class="menu-icon tf-icons bx bx-detail"></i>
+            <div data-i18n="Analytics">Facture</div>
+          </a>
+        </li>
+      </ul>
+    </aside>
+    <div class="layout-page">
+      <router-outlet></router-outlet>
+    </div>
+
+  </div>
+</div>

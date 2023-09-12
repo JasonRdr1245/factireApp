@@ -1,0 +1,62 @@
+
+  <div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4">
+      <span class="text-muted fw-light">Products /</span> List Products
+    </h4>
+    <div class="card">
+      <div
+        style="
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+        "
+      >
+        <h5 class="card-header">Table Basic</h5>
+        <div class="dropdown">
+          <button
+            type="button"
+            class="btn p-0 dropdown-toggle hide-arrow"
+            data-bs-toggle="dropdown"
+          >
+            <i class="bx bx-dots-vertical-rounded"></i>
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" routerLink="/dashboard/create-products"
+              ><i class="bx bx-edit-alt me-2"></i> create</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="table-responsive text-nowrap">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>unit</th>
+              <th>UnitPrice</th>
+              <th>Igv</th>
+              <th>tipoProducto</th>
+            </tr>
+          </thead>
+          <tbody class="table-border-bottom-0">
+            <tr  *ngFor="let product of products()">
+              <td>
+                <i class="fab fa-react fa-lg text-info me-3"></i>
+                <strong>{{product.name}}</strong>
+              </td>
+              <td>{{product.unit}}</td>
+              <td>
+                {{product.unitPrice}}
+              </td>
+              <td>
+                <span class="badge bg-label-success me-1">{{product.igv}}</span>
+              </td>
+              <td>{{product.tipoProducto}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+

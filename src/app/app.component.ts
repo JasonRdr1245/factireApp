@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, computed, effect, inject } from '@angular/core';
+import { AuthService } from './auth/services/auth.service';
+import { AuthStatus } from './auth/interfaces/auth-status.enum';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'frontFact';
+  private authService=inject(AuthService)
+  public finishedAuthCheck =computed<boolean>(()=>{
+    if(this.authService.authStatus()===AuthStatus.cheking){
+      return false
+    }
+    return true
+  })
+
+
+
 }
